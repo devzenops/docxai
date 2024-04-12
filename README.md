@@ -1,1 +1,1 @@
-# docxai
+Framework for processing .docx documents while maintaining .docx formatting

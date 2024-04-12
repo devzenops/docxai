@@ -1,0 +1,7 @@
+requests
+
+python-docx
+pdf2docx
+coolname
+
+#openai
