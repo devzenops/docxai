@@ -201,7 +201,7 @@ def find_changes_generator(text_1, text_2):
 
 def get_prompt() -> str:
     try:
-        with open("default_prompt.txt", "r") as file:
+        with open("prompt.txt", "r") as file:
             prompt = file.read()
             return prompt
     except Exception as e:
@@ -209,7 +209,7 @@ def get_prompt() -> str:
 
 def get_instruction() -> str:
     try:
-        with open("default_instruction.txt", "r") as file:
+        with open("instruction.txt", "r") as file:
             instruction = file.read()
             return instruction
     except Exception as e:
@@ -341,8 +341,30 @@ def yandex_gpt_tables(input_dict:dict)->dict:
         result_dict[main_i] = final_json
     return result_dict
 
+def init_instruction():
+    try:
+        with open("docxai/default_prompt.txt", "r") as file:
+            def_prompt = file.read()
+    except Exception as e:
+        logging.error(f"read prompt fail: {e}")
+    try:
+        with open("prompt.txt", "w") as file:
+            file.write(def_prompt)
+    except Exception as e:
+        logging.error(f"write prompt fail: {e}")
+    try:
+        with open("docxai/default_instruction.txt", "r") as file:
+            def_instruction = file.read()
+    except Exception as e:
+        logging.error(f"read instruction fail: {e}")
+    try:
+        with open("instruction.txt", "w") as file:
+            file.write(def_instruction)
+    except Exception as e:
+        logging.error(f"write instruction fail: {e}")
 
 def main():
+    init_instruction() 
     file_process("test.docx")
 
 if __name__ == '__main__':
