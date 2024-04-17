@@ -5,3 +5,5 @@ venv
 test.py
 __pycache__
 archive
+instruction.txt
+prompt.txt
