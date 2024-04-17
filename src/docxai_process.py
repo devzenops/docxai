@@ -10,8 +10,8 @@ from pdf2docx import Converter
 from docx import Document
 from docx.enum.text import WD_COLOR_INDEX
 
-from save_formatting import copy_style, apply_style
-from utilites import load_env
+from .save_formatting import copy_style, apply_style
+from .utilites import load_env
 
 
 env_vars = load_env()
